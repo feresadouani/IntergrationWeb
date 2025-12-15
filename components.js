@@ -44,7 +44,7 @@ const components = {
                 </div>
             </div>
             <div class="nav-separator"></div>
-            <a href="#" class="nav-link">Ai</a>
+            <a href="chat.html" class="nav-link">Ai</a>
         </nav>
 
         <!-- Header Icons -->
@@ -94,9 +94,9 @@ const components = {
             </div>
         </div>
 
-        <div class="chat-icon">
+        <a href="chat.html" class="chat-icon" aria-label="Ouvrir le chat">
             <span class="material-icons">chat_bubble</span>
-        </div>
+        </a>
     </div>
 </footer>`
 };
