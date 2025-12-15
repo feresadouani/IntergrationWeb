@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mindup - Assistance</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled CSS from SCSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Script to load components -->
+    <script src="components.js"></script>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+ <!-- Main Content -->
+   <main class="chat-page">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="chat-history">
+        <h2>Chat History</h2>
+
+        <div class="conversation active">Current Chat Conversation</div>
+        <div class="conversation">Old Chat Conversation</div>
+        <div class="conversation">Old Chat Conversation</div>
+    </aside>
+
+    <!-- CHAT AREA -->
+    <section class="chat-area">
+
+        <h1>Chat with an Expert</h1>
+
+        <div id="messages" class="messages">
+            <!-- Example messages (for display only) -->
+            <div class="message expert">
+                Hello this is slimen labyeth how can i hep you today?
+            </div>
+
+        </div>
+
+        <!-- INPUT -->
+        <form id="chatForm" class="chat-input">
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+                required
+            />
+            <button type="submit">Send</button>
+        </form>
+
+    </section>
+
+</main>
+
+<!-- Chat JS -->
+<script src="chat.js"></script>
+
+
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+</body>
+
+</html>

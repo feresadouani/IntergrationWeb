@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mindup - FriendsUp</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Compiled CSS from SCSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Script to load components -->
+  <script src="components.js"></script>
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="friendsup-page">
+    <!-- USERS LIST -->
+    <aside class="users-list">
+      <h2>Users</h2>
+
+      <div class="user" data-user="anon1">
+        <span class="material-icons">person</span>
+        Anonymous #1023
+      </div>
+
+      <div class="user" data-user="anon2">
+        <span class="material-icons">person</span>
+        Anonymous #8471
+      </div>
+
+      <div class="user" data-user="anon3">
+        <span class="material-icons">person</span>
+        Anonymous #5569
+      </div>
+
+      <div class="user" data-user="anon4">
+        <span class="material-icons">person</span>
+        Anonymous #2190
+      </div>
+    </aside>
+
+    <!-- WELCOME CARD / MIDDLE MESSAGE -->
+    <div class="welcome-card" id="welcomeCard">
+      <h1>FriendsUP</h1>
+      <p>Select someone you’d like to talk with</p>
+    </div>
+  </main>
+
+  <!-- CHAT POPUP -->
+  <div class="chat-popup hidden" id="chatPopup">
+    <div class="chat-header">
+      <span id="chatTitle">Chat</span>
+      <span class="material-icons close-btn" id="closeChat">close</span>
+    </div>
+    <div class="messages" id="popupMessages">
+      <div class="message other">Select a user to start a conversation</div>
+    </div>
+    <form id="popupForm" class="chat-input">
+      <input type="text" id="popupInput" placeholder="Type a message..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="friendsup.js"></script>
+</body>
+
+</html>
