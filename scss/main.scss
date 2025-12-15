@@ -1,8 +1,12 @@
+// 1. Variables first
 @use 'abstracts/variables' as *;
 
-
+// 2. Layout
 @use 'layout/header';
 @use 'layout/footer';
 
-
+// 3. Page-specific components
 @use 'pages/kanban';
+
+// 4. Responsive
+@use 'abstracts/responsive';

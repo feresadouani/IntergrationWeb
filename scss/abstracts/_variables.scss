@@ -1,34 +1,56 @@
-/* ===== COLORS ===== */
-$primary-teal: #2cb1a6;
-$primary-blue: #3b82f6;
-$primary-mint: #5eead4;
-$light-cyan: #a7f3d0;
-$medium-blue: #2563eb;
-$text-dark: #1f2937;
+// Variables Material Design - mindup
+// Couleurs de la palette
+$primary-mint: #49EBA9;        
+$primary-blue: #49C2EB;         
+$primary-teal: #49EBE0;         
+$primary-green: #49EB72;        
+$medium-blue: #498EEB;           
+$light-cyan: #97EBE5;            
+
+// Couleurs utilitaires
+$text-dark: #1a4d5c;
 $white: #ffffff;
+$black: #000000;
 
-/* ===== GRADIENTS ===== */
-$gradient-header-footer: linear-gradient(90deg, #99f6e4, #5eead4);
-$gradient-chat: linear-gradient(135deg, #2cb1a6, #3b82f6);
+// Dégradés prédéfinis
+$gradient-primary: linear-gradient(135deg, $primary-teal 0%, $primary-blue 50%, $primary-mint 100%);
+$gradient-header-footer: linear-gradient(135deg, $light-cyan 0%, rgba($primary-teal, 0.1) 100%);
+$gradient-card-focus: linear-gradient(135deg, $primary-teal 0%, $primary-blue 100%);
+$gradient-card-game: linear-gradient(135deg, $primary-blue 0%, $primary-teal 100%);
+$gradient-button: linear-gradient(135deg, $primary-teal 0%, $primary-blue 50%, $primary-mint 100%);
+$gradient-chat: linear-gradient(135deg, $primary-teal 0%, $primary-blue 50%, $primary-mint 100%);
 
-/* ===== SIZES ===== */
-$header-height: 90px;
-$footer-height: 90px;
-$header-width: 1400px;
-$footer-width: 1400px;
+// Typographie
+$font-title: 'Poppins', sans-serif;
+$font-body: 'Roboto', sans-serif;
 
-/* ===== TYPOGRAPHY ===== */
-$font-body: 'Inter', sans-serif;
-$paragraph-size: 14px;
+// Tailles de police
+$h1-size: 33px;
+$h2-size: 26px;
+$paragraph-size: 16px;
+$legend-size: 16px;
 
-/* ===== SPACING ===== */
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-xl: 32px;
+// Dimensions
+$header-height: 109px;
+$header-width: 1440px;
+$footer-height: 138px;
+$footer-width: 1440px;
+$button-min-width: 48px;
+$button-min-height: 32px;
+$icon-standard: 24px;
+$icon-small: 16px;
+$icon-large: 32px;
+$dropdown-min-height: 50px;
 
-/* ===== UI ===== */
+// Espacements
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Bordures
+$border-radius-sm: 8px;
 $border-radius-md: 12px;
-$dropdown-min-height: 42px;
-$icon-standard: 20px;
-$icon-large: 26px;
+$border-radius-lg: 16px;
+$border-radius-xl: 24px;
