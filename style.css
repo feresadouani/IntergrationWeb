@@ -1808,6 +1808,379 @@ p, .paragraph {
     min-width: auto;
   }
 }
+/* =========================
+   Agenda Intelligente
+========================= */
+/* === PAGE TITLE === */
+.agenda-title {
+  text-align: center;
+  margin: 2.5rem 0 1.5rem;
+}
+.agenda-title h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* === AGENDA CARD === */
+.agenda-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem 1.5rem 1.8rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* === AGENDA GRID === */
+.agenda-grid {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+/* Days header */
+.agenda-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Columns container */
+.agenda-columns {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+/* Single column */
+.agenda-col {
+  height: 200px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+  transition: all 0.2s ease;
+}
+.agenda-col:hover {
+  box-shadow: inset 0 0 0 1px #94e5da;
+  background: #fcfffe;
+}
+
+/* === BUTTONS === */
+.agenda-actions {
+  margin-top: 2.5rem;
+  /* Added margin-bottom to create space above the footer */
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.agenda-btn {
+  background: #9ef0e6;
+  border: none;
+  border-radius: 14px;
+  padding: 0.65rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+.agenda-btn .material-icons {
+  font-size: 20px;
+}
+.agenda-btn:hover {
+  background: #7fded2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.focus-page {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.focus-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header */
+.focus-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.focus-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.focus-header .focus-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.focus-header .block-notif {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+.focus-header .block-notif .material-icons {
+  font-size: 1.2rem;
+}
+.focus-header .back-btn {
+  background: #9ef0e6;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.focus-header .back-btn .material-icons {
+  color: #000;
+  font-size: 22px;
+}
+.focus-header .back-btn:hover {
+  background: #7fded2;
+}
+
+/* Timer */
+.timer-wrapper {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #9ef0e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.timer-circle .time {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #000;
+}
+.timer-circle .flame {
+  margin-top: 0.5rem;
+  font-size: 2.2rem;
+  color: #000;
+}
+
+.pause-btn {
+  margin-top: -24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #9ef0e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.pause-btn .material-icons {
+  font-size: 26px;
+  color: #000;
+}
+.pause-btn:hover {
+  background: #7fded2;
+}
+
+/* Presets */
+.timer-presets {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.timer-presets .preset {
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  background: #9ef0e6;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.timer-presets .preset:hover {
+  background: #7fded2;
+}
+
+/* ===== KANBAN ===== */
+.kanban-board {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.kanban-title {
+  font-size: 33px;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.button.primary {
+  background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(73, 235, 224, 0.3);
+}
+.button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(73, 235, 224, 0.4);
+}
+
+.kanban-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.kanban-column-title {
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  color: #0f172a;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(73, 235, 224, 0.3);
+}
+
+.kanban-list {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.kanban-card {
+  width: 100%;
+  max-width: 280px;
+  min-height: 100px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.kanban-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+}
+.kanban-card:active {
+  cursor: grabbing;
+}
+
+.card-yellow {
+  background: linear-gradient(135deg, #fde68a 0%, #fbbf24 100%);
+  transform: rotate(-2deg);
+}
+
+.card-green {
+  background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+  transform: rotate(2deg);
+}
+
+.card-blue {
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);
+  transform: rotate(-1deg);
+}
+
+.card-orange {
+  background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
+  transform: rotate(1deg);
+}
+
+@media (max-width: 1024px) {
+  .kanban-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .kanban-board {
+    padding: 0 1.5rem;
+    margin: 2rem auto;
+  }
+  .kanban-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .kanban-title {
+    font-size: 28px;
+  }
+  .kanban-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .kanban-list {
+    min-height: 200px;
+  }
+  .kanban-card {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .kanban-title {
+    font-size: 24px;
+  }
+  .button.primary {
+    width: 100%;
+  }
+}
 body {
   margin: 0;
   padding: 0;

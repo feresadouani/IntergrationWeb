@@ -1,0 +1,145 @@
+// Main Content Material Design
+@use 'variables' as *;
+
+$primary: #9ef0e6;
+$primary-dark: #7fded2;
+$text-dark: #0f172a;
+$text-muted: #64748b;
+
+.focus-page {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.focus-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header */
+.focus-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $text-dark;
+  }
+
+  .focus-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .block-notif {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: $text-muted;
+    font-size: 0.95rem;
+
+    .material-icons {
+      font-size: 1.2rem;
+    }
+  }
+
+  .back-btn {
+    background: $primary;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .material-icons {
+      color: #000;
+      font-size: 22px;
+    }
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+}
+
+/* Timer */
+.timer-wrapper {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: $primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .time {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .flame {
+    margin-top: 0.5rem;
+    font-size: 2.2rem;
+    color: #000;
+  }
+}
+
+.pause-btn {
+  margin-top: -24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .material-icons {
+    font-size: 26px;
+    color: #000;
+  }
+
+  &:hover {
+    background: $primary-dark;
+  }
+}
+
+/* Presets */
+.timer-presets {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+
+  .preset {
+    padding: 0.5rem 1.4rem;
+    border-radius: 999px;
+    background: $primary;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+}

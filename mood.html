@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
@@ -24,16 +24,16 @@
     <section class="max-w-3xl mx-auto px-4 flex flex-col items-center gap-10">
 
       <h1 class="mood-title text-center">
-        How do you feel right now?
+        Comment vous sentez-vous en ce moment ?
       </h1>
 
 
       <div class="mood-emojis">
-        <img src="images/cry.png" data-gif="images/cry.gif" class="emoji" alt="Very sad">
-        <img src="images/sad.png" data-gif="images/sad.gif" class="emoji" alt="Sad">
-        <img src="images/neutral.png" data-gif="images/neutral.gif" class="emoji" alt="Neutral">
-        <img src="images/good.png" data-gif="images/good.gif" class="emoji" alt="Good">
-        <img src="images/happy.png" data-gif="images/happy.gif" class="emoji" alt="Very happy">
+        <img src="images/cry.png" data-gif="images/cry.gif" class="emoji" alt="Très triste">
+        <img src="images/sad.png" data-gif="images/sad.gif" class="emoji" alt="Triste">
+        <img src="images/neutral.png" data-gif="images/neutral.gif" class="emoji" alt="Neutre">
+        <img src="images/good.png" data-gif="images/good.gif" class="emoji" alt="Bien">
+        <img src="images/happy.png" data-gif="images/happy.gif" class="emoji" alt="Très heureux">
       </div>
 
 
@@ -42,13 +42,13 @@
         class="mood-slider w-full max-w-xl" />
       <button id="moodButton"
         class="mood-button mt-6 px-8 py-3 rounded-full font-semibold text-white transition-colors duration-300">
-        Neutral ✔
+        Neutre ✔
       </button>
 
       <p id="moodMessage" class="text-center text-lg font-medium mt-4 opacity-0 transition-opacity duration-300"></p>
       <a id="progressLink" href="progress_details.html"
         class="mt-4 text-sm font-semibold underline opacity-0 pointer-events-none transition-opacity duration-300">
-        Check progress details →
+        Voir les détails de progression →
       </a>
 
     </section>
@@ -66,29 +66,29 @@
 
     const moods = [
       {
-        name: 'Very sad',
+        name: 'Très triste',
         color: '#60a5fa',
-        message: "That’s heavy. You don’t have to fix everything today. We’re here."
+        message: "C'est lourd. Tu n'as pas à tout réparer aujourd'hui. Nous sommes là."
       },
       {
-        name: 'Sad',
+        name: 'Triste',
         color: '#818cf8',
-        message: "Hmm… rough day. It won’t stay like this forever."
+        message: "Hmm… journée difficile. Ça ne restera pas comme ça pour toujours."
       },
       {
-        name: 'Neutral',
+        name: 'Neutre',
         color: '#34d399',
-        message: "Not great, not terrible. Sometimes that’s perfectly okay."
+        message: "Pas génial, pas terrible. Parfois, c'est parfaitement acceptable."
       },
       {
-        name: 'Good',
+        name: 'Bien',
         color: '#fbbf24',
-        message: "Nice. Hold onto that feeling and ride it a bit."
+        message: "Sympa. Accroche-toi à ce sentiment et profites-en un peu."
       },
       {
-        name: 'Very happy',
+        name: 'Très heureux',
         color: '#fb7185',
-        message: "Love that energy. Keep doing whatever led you here."
+        message: "J'adore cette énergie. Continue de faire ce qui t'a amené ici."
       }
     ];
 

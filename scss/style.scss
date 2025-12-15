@@ -11,6 +11,9 @@
 @use 'expertconvo';
 @use 'main-content-progress';
 @use 'chat';
+@use 'agenda';
+@use 'main-contenttimer';
+@use 'pages/kanban';
 
 // Base styles
 body {

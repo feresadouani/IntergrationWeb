@@ -23,22 +23,22 @@
 
     <!-- LEFT SIDEBAR -->
     <aside class="chat-history md:w-80 border-r border-gray-200 p-6 bg-white">
-        <h2 class="text-2xl font-bold text-slate-900 mb-6">Chat History</h2>
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">Historique des Chats</h2>
 
-        <div class="conversation active px-4 py-3 mb-4 rounded-lg border border-gray-300 bg-gradient-to-r from-teal-50 to-cyan-50 cursor-pointer hover:border-teal-400 transition-colors duration-200 font-medium text-slate-800">Current Chat Conversation</div>
-        <div class="conversation px-4 py-3 mb-4 rounded-lg border border-gray-200 hover:border-gray-300 cursor-pointer transition-colors duration-200 text-slate-700">Old Chat Conversation</div>
-        <div class="conversation px-4 py-3 mb-4 rounded-lg border border-gray-200 hover:border-gray-300 cursor-pointer transition-colors duration-200 text-slate-700">Old Chat Conversation</div>
+        <div class="conversation active px-4 py-3 mb-4 rounded-lg border border-gray-300 bg-gradient-to-r from-teal-50 to-cyan-50 cursor-pointer hover:border-teal-400 transition-colors duration-200 font-medium text-slate-800">Conversation actuelle</div>
+        <div class="conversation px-4 py-3 mb-4 rounded-lg border border-gray-200 hover:border-gray-300 cursor-pointer transition-colors duration-200 text-slate-700">Ancienne conversation</div>
+        <div class="conversation px-4 py-3 mb-4 rounded-lg border border-gray-200 hover:border-gray-300 cursor-pointer transition-colors duration-200 text-slate-700">Ancienne conversation</div>
     </aside>
 
     <!-- CHAT AREA -->
     <section class="chat-area flex-1 flex flex-col bg-white">
 
-        <h1 class="text-3xl font-bold text-slate-900 px-6 py-6 border-b border-gray-200">Chat with an Expert</h1>
+        <h1 class="text-3xl font-bold text-slate-900 px-6 py-6 border-b border-gray-200">Chat avec un Expert</h1>
 
         <div id="messages" class="messages flex-1 overflow-y-auto px-6 py-6 space-y-6">
             <!-- Example messages (for display only) -->
             <div class="message expert bg-gradient-to-r from-teal-50 to-cyan-50 p-4 rounded-lg border-l-4 border-teal-500 text-slate-800 max-w-xs">
-                Hello this is slimen labyeth how can i hep you today?
+                Bonjour, je suis votre expert. Comment puis-je vous aider aujourd'hui ?
             </div>
 
         </div>
@@ -48,11 +48,11 @@
             <input
                 type="text"
                 id="messageInput"
-                placeholder="Type a message..."
+                placeholder="Tapez un message..."
                 required
                 class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-slate-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200"
             />
-            <button type="submit" class="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-teal-500">Send</button>
+            <button type="submit" class="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-teal-500">Envoyer</button>
         </form>
 
     </section>
