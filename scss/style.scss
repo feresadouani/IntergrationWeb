@@ -2,15 +2,10 @@
 @use 'variables' as *;
 @use 'typography';
 @use 'header';
-@use 'main-content';
-@use 'daily-tasks';
+@use 'main-contenttimer';
 @use 'footer';
 @use 'responsive';
-@use 'main-contentsup';
-@use 'friendsup';
-@use 'expertconvo';
-@use 'main-content-progress';
-@use 'chat';
+@use 'agenda';
 
 // Base styles
 body {
@@ -21,3 +16,4 @@ body {
     flex-direction: column;
     background: $white;
 }
+

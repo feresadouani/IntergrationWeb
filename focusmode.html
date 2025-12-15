@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mindup - Focus Mode</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+  <!-- Compiled CSS from SCSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Components loader -->
+  <script src="components.js"></script>
+</head>
+
+<body class="focus-page flex flex-col min-h-screen">
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main -->
+  <main class="focus-container flex-1">
+
+    <!-- Top Section -->
+    <div class="focus-header flex items-start justify-between mb-12 relative">
+
+      <!-- Centered Title -->
+      <div class="flex flex-col items-center gap-2 mx-auto text-center">
+        <h1>Focus Mode</h1>
+
+        <span class="block-notif flex items-center gap-1 justify-center">
+          <span class="material-icons">do_not_disturb_on</span>
+          Bloquer notifications
+        </span>
+      </div>
+
+      <!-- Back Button -->
+      <button
+        class="back-btn shadow-md hover:shadow-lg transition absolute right-0">
+        <span class="material-icons">arrow_back</span>
+      </button>
+    </div>
+
+    <!-- Timer -->
+    <div class="timer-wrapper flex flex-col items-center">
+      <div class="timer-circle shadow-lg select-none">
+        <span id="time" class="time">25:00</span>
+        <span class="material-icons flame">local_fire_department</span>
+      </div>
+
+      <!-- Start / Pause Button -->
+      <button
+        id="startPauseBtn"
+        class="pause-btn shadow-md hover:shadow-lg transition">
+        <span id="startPauseIcon" class="material-icons">play_arrow</span>
+      </button>
+    </div>
+
+    <!-- Preset Buttons -->
+    <div class="timer-presets mt-10 flex items-center justify-center gap-6">
+      <button class="preset shadow-sm hover:shadow-md transition" data-minutes="25">
+        25 mins
+      </button>
+      <button class="preset shadow-sm hover:shadow-md transition" data-minutes="40">
+        40 mins
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Timer Logic -->
+  <script src="timer.js"></script>
+</body>
+</html>
