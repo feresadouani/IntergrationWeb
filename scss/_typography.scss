@@ -1,0 +1,53 @@
+// Typographie Material Design
+@use 'variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-body;
+    font-size: $paragraph-size;
+    color: $text-dark;
+    line-height: 1.6;
+}
+
+// Titres
+h1, .h1 {
+    font-family: $font-title;
+    font-size: $h1-size;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2, .h2 {
+    font-family: $font-title;
+    font-size: $h2-size;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h3, .h3 {
+    font-family: $font-title;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+// Paragraphes
+p, .paragraph {
+    font-family: $font-body;
+    font-size: $paragraph-size;
+    font-weight: 400;
+}
+
+// Légendes
+.legend, .caption {
+    font-family: $font-body;
+    font-size: $legend-size;
+    font-weight: 400;
+}
+

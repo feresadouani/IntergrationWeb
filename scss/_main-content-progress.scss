@@ -1,0 +1,343 @@
+@use 'variables' as *;
+
+.dashboard {
+  font-family: 'Inter', sans-serif;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* LEFT COLUMN */
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  /* This is the magic */
+  max-width: 360px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: left;
+  }
+}
+
+
+.select-wrapper {
+  position: relative;
+  width: fit-content;
+
+  background: linear-gradient(135deg, #6ee7b7, #67e8f9);
+  border-radius: 12px;
+  padding: 10px 16px;
+
+  transition: transform 0.25s ease, filter 0.25s ease;
+
+  select {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    color: #064e3b;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent;
+  border: none;
+  padding-right: 28px; // space for arrow
+  font-weight: 600;
+  font-size: 1rem;
+  color: #064e3b;
+  cursor: pointer;
+  outline: none;
+}
+.select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  font-size: 14px;
+  color: #064e3b;
+}
+/* Style the dropdown options (limited support) */
+.select-wrapper select option {
+  background: #d1fae5; // soft green
+  color: #064e3b;
+  font-weight: 600;
+}
+/* Progress card */
+.progress-card {
+  background: linear-gradient(135deg, #67e8f9, #6ee7b7);
+  border-radius: 20px;
+  padding: 40px;
+  width: 260px;
+  height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; // 👈 this is the missing piece
+  gap: 15px;
+
+  color: #064e3b;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  .material-icons {
+    font-size: 48px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center; // 👈 keeps text visually centered
+  }
+}
+
+
+/* Chart */
+.chart-card {
+  background: linear-gradient(135deg, #67e8f9, #6ee7b7);
+  border-radius: 24px;
+  padding: 40px;
+  height: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  svg {
+    width: 100%;
+
+    line {
+      stroke: #ffffff;
+      stroke-width: 2;
+    }
+
+    polyline {
+      fill: none;
+      stroke: #0f766e;
+      stroke-width: 3;
+    }
+
+    circle {
+      fill: #0f766e;
+    }
+
+    text {
+      fill: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+  
+}
+.title-block {
+  width: fit-content;
+}
+
+.centered-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // centers Weekly + card relative to title width
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Shared hover animation base */
+.select-wrapper,
+.progress-card,
+.chart-card {
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* Weekly selector hover */
+.select-wrapper:hover {
+  transform: scale(1.06);
+  filter: brightness(1.05) saturate(1.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Progress card hover */
+.progress-card:hover {
+  transform: scale(1.05);
+  filter: brightness(1.06) saturate(1.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* Chart card hover */
+.chart-card:hover {
+  transform: scale(1.03);
+  filter: brightness(1.04) saturate(1.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+* {
+  backface-visibility: hidden;
+}
+
+
+/* Page base */
+.progress {
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+}
+
+/* Progress Details */
+.progress-details {
+  margin-bottom: 60px;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+}
+
+.details-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .emoji {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #e0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .material-icons {
+      font-size: 52px;
+      color: #38bdf8;
+    }
+  }
+
+  .details-text {
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-top: 4px;
+    }
+
+    .trend {
+      font-weight: 700;
+      color: #0ea5e9;
+      margin-top: 6px;
+    }
+  }
+}
+
+/* Recent Check-ins */
+.checkins {
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+}
+
+.checkins-table {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background: #bdf7f2;
+  padding: 14px 20px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 16px 20px;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+.progress-wrapper {
+  max-width: 820px; // 👈 matches screenshot proportions
+}
+
+.mood-wrapper {
+  max-width: 760px;
+  text-align: center;
+}
+
+.mood-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #0f172a;
+}
+
+.mood-emojis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.mood-emojis img {
+  width: 80px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  opacity: 0.8;
+}
+
+.mood-emojis img.active {
+  transform: scale(1.4);
+  opacity: 1;
+}
+
+/* Slider */
+.mood-slider {
+  width: 100%;
+  margin-top: 10px;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6ee7b7, #3b82f6, #22d3ee);
+}
+
+.mood-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #38bdf8;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.22);
+}
+
+.mood-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #38bdf8;
+  cursor: pointer;
+}

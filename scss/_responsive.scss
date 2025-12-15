@@ -1,0 +1,106 @@
+// Responsive Design
+@use 'variables' as *;
+
+@media (max-width: 1440px) {
+    .header,
+    .footer {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content-container {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+    
+    .left-section {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .features {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .right-section {
+        flex-direction: row;
+        gap: $spacing-md;
+    }
+    
+    .card {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        min-height: $header-height;
+        padding: $spacing-sm $spacing-md;
+    }
+    
+    .header-container {
+        flex-wrap: wrap;
+        gap: $spacing-sm;
+    }
+    
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $spacing-sm;
+    }
+    
+    .main-content {
+        padding: $spacing-md;
+    }
+    
+    .headline {
+        font-size: 28px;
+    }
+    
+    .footer {
+        height: auto;
+        min-height: $footer-height;
+        padding: $spacing-md;
+    }
+    
+    .footer-container {
+        flex-wrap: wrap;
+        gap: $spacing-md;
+        justify-content: center;
+    }
+    
+    .footer-contact {
+        order: -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 24px;
+    }
+    
+    .start-button {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .features {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .right-section {
+        flex-direction: column;
+    }
+    
+    .card {
+        width: 100%;
+    }
+}
+

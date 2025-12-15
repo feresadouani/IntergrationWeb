@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mindup – Mood</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Material Icons (REQUIRED for header & footer) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Compiled CSS from SCSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Script to load header & footer -->
+  <script src="components.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main Content -->
+  <main>
+    <section class="mood-page py-14">
+      <div class="mood-wrapper mx-auto px-4">
+
+        <h1 class="mood-title">How do you feel right now?</h1>
+
+        <!-- Mood Emojis -->
+        <div class="mood-emojis">
+          <img src="images/cry.gif" class="emoji" data-index="0" alt="Very sad">
+          <img src="images/sad.gif" class="emoji" data-index="1" alt="Sad">
+          <img src="images/neutral.gif" class="emoji" data-index="2" alt="Neutral">
+          <img src="images/good.gif" class="emoji" data-index="3" alt="Good">
+          <img src="images/happy.gif" class="emoji" data-index="4" alt="Very happy">
+        </div>
+
+        <!-- Range Slider -->
+        <input
+          type="range"
+          min="0"
+          max="4"
+          step="1"
+          value="2"
+          class="mood-slider"
+          id="moodSlider"
+        />
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Mood Interaction Script -->
+  <script>
+    const slider = document.getElementById('moodSlider');
+    const emojis = document.querySelectorAll('.emoji');
+
+    function updateEmoji(index) {
+      emojis.forEach((emoji, i) => {
+        emoji.classList.toggle('active', i === Number(index));
+      });
+    }
+
+    // Initial state
+    updateEmoji(slider.value);
+
+    // Update on slider move
+    slider.addEventListener('input', () => {
+      updateEmoji(slider.value);
+    });
+  </script>
+
+</body>
+
+</html>
