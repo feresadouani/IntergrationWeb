@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
   <!-- SortableJS -->
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -20,16 +22,16 @@
   <main class="main-content kanban-board">
     <div class="kanban-header">
       <h1 class="kanban-title">Kanban</h1>
-          <button id="add-task-btn" class="button primary">
-            <span class="material-icons">add</span>
-            Add Task
-          </button>
+      <button id="add-task-btn" class="button primary">
+        <span class="material-icons">Ajouter</span>
+        Ajouter Task
+      </button>
     </div>
 
     <section class="kanban-columns">
       <!-- TODO Column -->
       <div class="kanban-column">
-        <h2 class="kanban-column-title">TODO</h2>
+        <h2 class="kanban-column-title">A Faire</h2>
         <div class="kanban-list">
           <div class="kanban-card card-yellow">Tâche A</div>
           <div class="kanban-card card-green">Tâche B</div>
@@ -38,7 +40,7 @@
 
       <!-- IN PROGRESS Column -->
       <div class="kanban-column">
-        <h2 class="kanban-column-title">IN PROGRESS</h2>
+        <h2 class="kanban-column-title">En Cours</h2>
         <div class="kanban-list">
           <div class="kanban-card card-blue">Tâche C</div>
           <div class="kanban-card card-orange">Tâche D</div>
@@ -47,7 +49,7 @@
 
       <!-- DONE Column -->
       <div class="kanban-column">
-        <h2 class="kanban-column-title">DONE</h2>
+        <h2 class="kanban-column-title">Fait</h2>
         <div class="kanban-list">
           <div class="kanban-card card-yellow">Tâche E</div>
         </div>
@@ -62,4 +64,5 @@
   <script src="assets/js/load-components.js"></script>
   <script src="assets/js/kanban.js"></script>
 </body>
+
 </html>
