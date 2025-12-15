@@ -73,26 +73,89 @@ function initDropdowns() {
     });
 }
 
+// Function to initialize mobile sidebar menu
+function initMobileMenu() {
+    const toggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.mobile-sidebar');
+    const overlay = document.querySelector('.mobile-sidebar-overlay');
+    const closeBtn = document.querySelector('.mobile-close');
+
+    if (!toggle || !sidebar) {
+        console.log('Mobile menu elements not found:', { toggle: !!toggle, sidebar: !!sidebar });
+        return;
+    }
+
+    function openMenu() {
+        sidebar.classList.add('open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        // Empêcher le scroll du body quand le menu est ouvert
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        // Réactiver le scroll du body quand le menu est fermé
+        document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Menu toggle clicked');
+        if (sidebar.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+    }
+}
+
 // Load components when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         loadComponents();
-        // Initialize dropdowns after a short delay to ensure header is loaded
-        setTimeout(initDropdowns, 100);
+        // Initialize header interactions after a short delay to ensure header is loaded
+        setTimeout(function () {
+            initDropdowns();
+            initMobileMenu();
+        }, 100);
     });
 } else {
     // DOM is already loaded
     loadComponents();
-    setTimeout(initDropdowns, 100);
+    setTimeout(function () {
+        initDropdowns();
+        initMobileMenu();
+    }, 100);
 }
 
-// Re-initialize dropdowns when header is loaded (for dynamic loading)
+// Re-initialize dropdowns and mobile menu when header is loaded (for dynamic loading)
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
         if (mutation.addedNodes.length) {
             const headerPlaceholder = document.getElementById('header-placeholder');
-            if (headerPlaceholder && headerPlaceholder.querySelector('.nav-dropdown')) {
-                initDropdowns();
+            if (headerPlaceholder) {
+                // Check if header content is loaded (either nav-dropdown or menu-toggle)
+                const hasNavDropdown = headerPlaceholder.querySelector('.nav-dropdown');
+                const hasMenuToggle = headerPlaceholder.querySelector('.menu-toggle');
+                
+                if (hasNavDropdown || hasMenuToggle) {
+                    // Small delay to ensure DOM is fully ready
+                    setTimeout(function() {
+                        initDropdowns();
+                        initMobileMenu();
+                    }, 50);
+                }
             }
         }
     });
