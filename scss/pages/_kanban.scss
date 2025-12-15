@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as *;
+
+/* ===== KANBAN ===== */
+
+.kanban-board {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.kanban-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-dark;
+}
+
+.kanban-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.kanban-column-title {
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: .75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba($text-dark, 0.3);
+}
+
+.kanban-list {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.kanban-card {
+  width: 120px;
+  height: 100px;
+  padding: .75rem;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  cursor: grab;
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,.25);
+  }
+}
+
+.card-yellow { background: #fde68a; transform: rotate(-5deg); }
+.card-green  { background: #86efac; transform: rotate(3deg); }
+.card-blue   { background: #7dd3fc; transform: rotate(-3deg); }
+.card-orange { background: #fdba74; transform: rotate(4deg); }

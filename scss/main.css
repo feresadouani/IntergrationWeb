@@ -1,0 +1,111 @@
+/* ===== COLORS ===== */
+/* ===== GRADIENTS ===== */
+/* ===== SIZES ===== */
+/* ===== TYPOGRAPHY ===== */
+/* ===== SPACING ===== */
+/* ===== UI ===== */
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(90deg, #99f6e4, #5eead4);
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(44, 177, 166, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+/* (your full header code continues here unchanged) */
+/* ===== FOOTER ===== */
+.footer {
+  background: linear-gradient(90deg, #99f6e4, #5eead4);
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -2px 8px rgba(44, 177, 166, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+/* (your full footer code continues here unchanged) */
+/* ===== KANBAN ===== */
+.kanban-board {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.kanban-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.kanban-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.kanban-column-title {
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.3);
+}
+
+.kanban-list {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.kanban-card {
+  width: 120px;
+  height: 100px;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kanban-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-yellow {
+  background: #fde68a;
+  transform: rotate(-5deg);
+}
+
+.card-green {
+  background: #86efac;
+  transform: rotate(3deg);
+}
+
+.card-blue {
+  background: #7dd3fc;
+  transform: rotate(-3deg);
+}
+
+.card-orange {
+  background: #fdba74;
+  transform: rotate(4deg);
+}/*# sourceMappingURL=main.css.map */

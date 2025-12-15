@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+
+/* ===== HEADER ===== */
+
+.header {
+  background: $gradient-header-footer;
+  height: $header-height;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba($primary-teal, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+/* (your full header code continues here unchanged) */
