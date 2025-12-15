@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mindup – Mood</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="components.js" defer></script>
+</head>
+
+
+<body class="bg-white">
+
+  <div id="header-placeholder"></div>
+
+  <main class="py-14">
+    <section class="max-w-3xl mx-auto px-4 flex flex-col items-center gap-10">
+
+      <h1 class="mood-title text-center">
+        How do you feel right now?
+      </h1>
+
+      
+      <div class="mood-emojis">
+  <img src="images/cry.png"     data-gif="images/cry.gif"     class="emoji" alt="Very sad">
+  <img src="images/sad.png"     data-gif="images/sad.gif"     class="emoji" alt="Sad">
+  <img src="images/neutral.png" data-gif="images/neutral.gif" class="emoji" alt="Neutral">
+  <img src="images/good.png"    data-gif="images/good.gif"    class="emoji" alt="Good">
+  <img src="images/happy.png"   data-gif="images/happy.gif"  class="emoji" alt="Very happy">
+</div>
+
+
+     
+      <input
+  type="range"
+  min="0"
+  max="100"
+  step="0.01"
+  value="50"
+  id="moodSlider"
+  class="mood-slider w-full max-w-xl"
+/>
+<button
+  id="moodButton"
+  class="mood-button mt-6 px-8 py-3 rounded-full font-semibold text-white transition-colors duration-300"
+>
+  Neutral ✔
+</button>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+ <script>
+  const slider = document.getElementById('moodSlider');
+  const emojis = document.querySelectorAll('.emoji');
+  const button = document.getElementById('moodButton');
+
+  const moods = [
+    { name: 'Very sad',   color: '#60a5fa' },
+    { name: 'Sad',        color: '#818cf8' },
+    { name: 'Neutral',    color: '#34d399' },
+    { name: 'Good',       color: '#fbbf24' },
+    { name: 'Very happy', color: '#fb7185' }
+  ];
+
+  function updateMood(value) {
+    const zone = Math.min(4, Math.floor(value / 20));
+    const mood = moods[zone];
+
+    emojis.forEach((emoji, index) => {
+      const isActive = index === zone;
+      emoji.classList.toggle('active', isActive);
+
+      if (isActive) {
+        emoji.src = emoji.dataset.gif;
+      } else {
+        emoji.src = emoji.dataset.gif.replace('.gif', '.png');
+      }
+    });
+
+
+    slider.style.background = `
+      linear-gradient(
+        90deg,
+        ${mood.color} ${value}%,
+        #e5e7eb ${value}%
+      )
+    `;
+
+
+    button.textContent = `${mood.name} ✔`;
+    button.style.backgroundColor = mood.color;
+  }
+
+  updateMood(slider.value);
+  slider.addEventListener('input', (e) => updateMood(e.target.value));
+</script>
+
+
+
+
+</body>
+</html>
