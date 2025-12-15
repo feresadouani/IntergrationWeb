@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mindup - Kanban</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Material Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- Compiled CSS from SCSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Script to load shared header/footer -->
-  <script src="components.js" defer></script>
-</head>
+  <title>Kanban | MindUp</title>
 
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- SortableJS -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
 <body>
+
+  <!-- HEADER -->
   <div id="header-placeholder"></div>
 
   <!-- KANBAN BOARD -->
   <main class="main-content kanban-board">
     <div class="kanban-header">
       <h1 class="kanban-title">Kanban</h1>
-      <button class="button primary">Ajouter une tâche</button>
+          <button id="add-task-btn" class="button primary">
+            <span class="material-icons">add</span>
+            Add Task
+          </button>
     </div>
 
     <section class="kanban-columns">
       <!-- TODO Column -->
-      <div>
-        <h2 class="kanban-column-title">À FAIRE</h2>
+      <div class="kanban-column">
+        <h2 class="kanban-column-title">TODO</h2>
         <div class="kanban-list">
           <div class="kanban-card card-yellow">Tâche A</div>
           <div class="kanban-card card-green">Tâche B</div>
@@ -35,8 +37,8 @@
       </div>
 
       <!-- IN PROGRESS Column -->
-      <div>
-        <h2 class="kanban-column-title">EN COURS</h2>
+      <div class="kanban-column">
+        <h2 class="kanban-column-title">IN PROGRESS</h2>
         <div class="kanban-list">
           <div class="kanban-card card-blue">Tâche C</div>
           <div class="kanban-card card-orange">Tâche D</div>
@@ -44,8 +46,8 @@
       </div>
 
       <!-- DONE Column -->
-      <div>
-        <h2 class="kanban-column-title">TERMINÉ</h2>
+      <div class="kanban-column">
+        <h2 class="kanban-column-title">DONE</h2>
         <div class="kanban-list">
           <div class="kanban-card card-yellow">Tâche E</div>
         </div>
@@ -53,7 +55,11 @@
     </section>
   </main>
 
-  <!-- Footer will be loaded here -->
+  <!-- FOOTER -->
   <div id="footer-placeholder"></div>
+
+  <!-- JS -->
+  <script src="assets/js/load-components.js"></script>
+  <script src="assets/js/kanban.js"></script>
 </body>
 </html>
