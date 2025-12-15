@@ -242,12 +242,10 @@ p, .paragraph {
   align-items: start;
 }
 
-/* LEFT COLUMN */
 .dashboard-left {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  /* This is the magic */
   max-width: 360px;
   margin: 0 auto;
 }
@@ -300,14 +298,12 @@ p, .paragraph {
   color: #064e3b;
 }
 
-/* Style the dropdown options (limited support) */
 .select-wrapper select option {
   background: #d1fae5;
   color: #064e3b;
   font-weight: 600;
 }
 
-/* Progress card */
 .progress-card {
   background: linear-gradient(135deg, #67e8f9, #6ee7b7);
   border-radius: 20px;
@@ -331,7 +327,6 @@ p, .paragraph {
   text-align: center;
 }
 
-/* Chart */
 .chart-card {
   background: linear-gradient(135deg, #67e8f9, #6ee7b7);
   border-radius: 24px;
@@ -372,28 +367,24 @@ p, .paragraph {
   margin-top: 30px;
 }
 
-/* Shared hover animation base */
 .select-wrapper,
 .progress-card,
 .chart-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
-/* Weekly selector hover */
 .select-wrapper:hover {
   transform: scale(1.06);
   filter: brightness(1.05) saturate(1.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Progress card hover */
 .progress-card:hover {
   transform: scale(1.05);
   filter: brightness(1.06) saturate(1.1);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
 }
 
-/* Chart card hover */
 .chart-card:hover {
   transform: scale(1.03);
   filter: brightness(1.04) saturate(1.08);
@@ -404,13 +395,11 @@ p, .paragraph {
   backface-visibility: hidden;
 }
 
-/* Page base */
 .progress {
   font-family: "Inter", sans-serif;
   color: #0f172a;
 }
 
-/* Progress Details */
 .progress-details {
   margin-bottom: 60px;
 }
@@ -452,7 +441,6 @@ p, .paragraph {
   margin-top: 6px;
 }
 
-/* Recent Check-ins */
 .checkins h2 {
   font-size: 1.8rem;
   font-weight: 800;
@@ -463,23 +451,54 @@ p, .paragraph {
   width: 100%;
 }
 
-.table-header {
-  display: grid;
+.table-header,
+.table-row {
+  display: grid !important;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+}
+
+.table-header {
   background: #bdf7f2;
   padding: 14px 20px;
-  font-weight: 700;
   border-radius: 8px;
+  font-weight: 700;
 }
 
 .table-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
   padding: 16px 20px;
-  align-items: center;
 }
 .table-row:not(:last-child) {
   border-bottom: 1px solid #e5e7eb;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+}
+
+.cell.score {
+  justify-content: center;
+}
+
+.cell.trajectory {
+  justify-content: flex-end;
+  font-weight: 700;
+}
+
+.score {
+  justify-content: center;
+}
+
+.trajectory {
+  justify-content: flex-end;
+  font-weight: 700;
+}
+
+.checkins-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .progress-wrapper {
@@ -499,32 +518,32 @@ p, .paragraph {
 }
 
 .mood-emojis {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
-  gap: 14px;
+  justify-items: center;
+  gap: 32px;
   margin-bottom: 40px;
 }
 
 .mood-emojis img {
   width: 80px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  opacity: 0.8;
+  opacity: 0.6;
+  transform: scale(1);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .mood-emojis img.active {
-  transform: scale(1.4);
+  transform: scale(1.45);
   opacity: 1;
 }
 
-/* Slider */
 .mood-slider {
-  width: 100%;
-  margin-top: 10px;
   appearance: none;
   height: 8px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #6ee7b7, #3b82f6, #22d3ee);
+  background: #e5e7eb;
+  transition: background 0.3s ease;
 }
 
 .mood-slider::-webkit-slider-thumb {
@@ -532,17 +551,22 @@ p, .paragraph {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #38bdf8;
+  background: #0ea5e9;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
 .mood-slider::-moz-range-thumb {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #38bdf8;
+  background: #0ea5e9;
   cursor: pointer;
+}
+
+.mood-button {
+  min-width: 200px;
+  text-align: center;
 }
 
 .tasks-page {

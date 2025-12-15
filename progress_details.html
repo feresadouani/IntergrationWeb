@@ -5,84 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mindup – Progress Details</title>
 
-  <!-- Tailwind (already used in your project) -->
+  
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Material Icons -->
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <!-- Compiled CSS -->
+  
   <link rel="stylesheet" href="style.css">
 
-  <!-- Header / Footer loader -->
+ 
   <script src="components.js" defer></script>
 </head>
+
 <body>
 
-  <!-- Header -->
   <div id="header-placeholder"></div>
 
-  <!-- Main Content -->
-  <main class="progress py-12">
-  <div class="progress-wrapper mx-auto px-4">
-    
-    <!-- Progress Details -->
-    <section class="progress-details">
-      <h1>Progress Details</h1>
+  <main class="py-12">
+    <div class="progress-wrapper max-w-4xl mx-auto px-4 flex flex-col gap-12">
 
-      <div class="details-card">
-        <div class="emoji">
-          <span class="material-icons">sentiment_satisfied</span>
+     
+      <section class="progress-details">
+        <h1 class="text-2xl font-semibold mb-6">Progress Details</h1>
+
+        <div class="details-card flex items-center gap-6">
+          <div class="emoji">
+            <span class="material-icons">sentiment_satisfied</span>
+          </div>
+
+          <div class="details-text">
+            <h2 class="font-medium">Monday, 12 April</h2>
+            <p>Sat</p>
+            <p class="trend">+3% since last week</p>
+          </div>
         </div>
+      </section>
 
-        <div class="details-text">
-          <h2>Monday, 12 April</h2>
-          <p>Sat</p>
-          <p class="trend">+3% since last week</p>
+      
+      <section class="checkins">
+        <h2 class="text-xl font-semibold mb-4">Recent Check-ins</h2>
+
+        <div class="checkins-table flex flex-col gap-3">
+
+          <div class="table-header flex justify-between font-medium">
+            <span>Date</span>
+            <span>Score</span>
+            <span>Mood Trajectory</span>
+          </div>
+
+          <div class="table-row flex justify-between items-center">
+            <span>Monday, 5 April</span>
+            <span class="material-icons mood happy">sentiment_satisfied</span>
+            <span class="positive">+3%</span>
+          </div>
+
+          <div class="table-row flex justify-between items-center">
+            <span>Monday, 29 March</span>
+            <span class="material-icons mood neutral">sentiment_neutral</span>
+            <span class="negative">-2%</span>
+          </div>
+
+          <div class="table-row flex justify-between items-center">
+            <span>Monday, 22 March</span>
+            <span class="material-icons mood sad">sentiment_dissatisfied</span>
+            <span class="negative">-6%</span>
+          </div>
+
+          <div class="table-row flex justify-between items-center">
+            <span>Monday, 15 March</span>
+            <span class="material-icons mood happy">sentiment_satisfied</span>
+            <span class="positive">+1%</span>
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Recent Check-ins -->
-    <section class="checkins">
-      <h2>Recent Check-ins</h2>
-
-      <div class="checkins-table">
-        <div class="table-header">
-          <span>Date</span>
-          <span>Score</span>
-          <span>Mood Trajectory</span>
-        </div>
-
-        <div class="table-row">
-          <span>Monday, 5 April</span>
-          <span class="material-icons mood happy">sentiment_satisfied</span>
-          <span class="positive">+3%</span>
-        </div>
-
-        <div class="table-row">
-          <span>Monday, 29 March</span>
-          <span class="material-icons mood neutral">sentiment_neutral</span>
-          <span class="negative">-2%</span>
-        </div>
-
-        <div class="table-row">
-          <span>Monday, 22 March</span>
-          <span class="material-icons mood sad">sentiment_dissatisfied</span>
-          <span class="negative">-6%</span>
-        </div>
-
-        <div class="table-row">
-          <span>Monday, 15 March</span>
-          <span class="material-icons mood happy">sentiment_satisfied</span>
-          <span class="positive">+1%</span>
-        </div>
-      </div>
-    </section>
     </div>
   </main>
 
-  <!-- Footer -->
   <div id="footer-placeholder"></div>
 
 </body>
