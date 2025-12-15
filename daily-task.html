@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mindup - Tâches quotidiennes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <script src="components.js"></script>
+</head>
+
+<body class="bg-white">
+    <div id="header-placeholder"></div>
+
+    <main class="tasks-page">
+        <div class="tasks-card">
+            <div class="tasks-header">
+                <div>
+                    <h2 class="tasks-title">Tache quotidienne</h2>
+                    <div class="tasks-divider"></div>
+                </div>
+                <button class="add-task-btn">
+                    <span class="material-icons">add</span>
+                    <span>Ajouter une Tache</span>
+                </button>
+            </div>
+
+            <div class="tasks-grid grid md:grid-cols-2 gap-10">
+                <div class="task-list">
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" checked aria-label="Tache 1 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 1 complet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" checked aria-label="Tache 2 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 2 complet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" checked aria-label="Tache 3 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 3 complet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" checked aria-label="Tache 4 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 4 complet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" checked aria-label="Tache 5 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 5 complet</span>
+                    </label>
+                </div>
+
+                <div class="task-list">
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" aria-label="Tache 6 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 6 incomplet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" aria-label="Tache 7 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 7 incomplet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" aria-label="Tache 8 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 8 incomplet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" aria-label="Tache 9 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 9 incomplet</span>
+                    </label>
+
+                    <label class="task-item">
+                        <span class="task-checkbox">
+                            <input type="checkbox" aria-label="Tache 10 complet">
+                            <span class="box">
+                                <span class="material-icons">check</span>
+                            </span>
+                        </span>
+                        <span class="task-text">tache 10 incomplet</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="tasks-actions">
+                <button class="validate-btn">Valider</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+
+</html>
+

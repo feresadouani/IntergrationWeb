@@ -439,6 +439,12 @@ p, .paragraph {
   gap: 1rem;
 }
 
+.footer-separator {
+  width: 1px;
+  height: 60px;
+  background: rgba(26, 77, 92, 0.3);
+}
+
 .contact-label {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -567,6 +573,205 @@ p, .paragraph {
   .footer-contact {
     order: -1;
     width: 100%;
+  }
+}
+
+/* Daily Tasks page */
+.tasks-page {
+  flex: 1;
+  background: #ffffff;
+  padding: 3rem 3rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.tasks-card {
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(73, 235, 224, 0.15);
+  box-shadow: 0 8px 24px rgba(26, 77, 92, 0.08);
+  padding: 3rem;
+}
+
+.tasks-header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tasks-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a4d5c;
+}
+
+.tasks-divider {
+  margin-top: 0.5rem;
+  height: 1px;
+  width: 100%;
+  background: rgba(26, 77, 92, 0.2);
+}
+
+.add-task-btn {
+  min-width: 190px;
+  height: 52px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(73, 235, 224, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 0 1.5rem;
+}
+.add-task-btn .material-icons {
+  font-size: 24px;
+}
+.add-task-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(73, 235, 224, 0.4);
+}
+.add-task-btn:active {
+  transform: translateY(0);
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #1a4d5c;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.task-item:hover {
+  background: rgba(151, 235, 229, 0.3);
+  transform: translateX(2px);
+}
+
+.task-checkbox {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.task-checkbox input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+.task-checkbox .box {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  border: 2px solid rgba(26, 77, 92, 0.35);
+  background: #e6e6e6;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+.task-checkbox .box .material-icons {
+  color: #ffffff;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.task-checkbox input:checked + .box {
+  background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(73, 235, 224, 0.25);
+}
+.task-checkbox input:checked + .box .material-icons {
+  opacity: 1;
+}
+
+.tasks-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.validate-btn {
+  min-width: 140px;
+  height: 46px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(73, 235, 224, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.validate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(73, 235, 224, 0.4);
+}
+.validate-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .tasks-card {
+    padding: 2rem;
+  }
+  .tasks-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .tasks-header {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .tasks-page {
+    padding: 2rem 1.5rem;
+  }
+  .tasks-card {
+    padding: 1.5rem;
+  }
+  .tasks-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .validate-btn {
+    width: 100%;
+    max-width: 220px;
   }
 }
 @media (max-width: 480px) {
