@@ -37,8 +37,6 @@ Calendrier hebdomadaire pour planifier et organiser votre semaine.
 
 ![Agenda](Screenshot/Agenda.png)
 
-![Agenda](Screenshot/Agenda.jpg)
-
 ### 🎯 Mode Focus
 Minuteur Pomodoro pour améliorer votre concentration et productivité.
 
