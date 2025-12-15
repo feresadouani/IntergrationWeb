@@ -17,7 +17,7 @@
   flex-direction: column;
   gap: 30px;
 
-  
+
   max-width: 360px;
   margin: 0 auto;
 
@@ -57,13 +57,14 @@
 
   background: transparent;
   border: none;
-  padding-right: 28px; 
+  padding-right: 28px;
   font-weight: 600;
   font-size: 1rem;
   color: #064e3b;
   cursor: pointer;
   outline: none;
 }
+
 .select-wrapper::after {
   content: "▾";
   position: absolute;
@@ -77,7 +78,7 @@
 }
 
 .select-wrapper select option {
-  background: #d1fae5; 
+  background: #d1fae5;
   color: #064e3b;
   font-weight: 600;
 }
@@ -105,7 +106,7 @@
   p {
     font-size: 1.1rem;
     font-weight: 700;
-    text-align: center; 
+    text-align: center;
   }
 }
 
@@ -142,8 +143,9 @@
       font-weight: 600;
     }
   }
-  
+
 }
+
 .title-block {
   width: fit-content;
 }
@@ -160,7 +162,7 @@
 .select-wrapper,
 .progress-card,
 .chart-card {
-  transition: 
+  transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
     filter 0.25s ease;
@@ -186,6 +188,7 @@
   filter: brightness(1.04) saturate(1.08);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
+
 * {
   backface-visibility: hidden;
 }
@@ -297,6 +300,7 @@
   justify-content: flex-end;
   font-weight: 700;
 }
+
 .score {
   justify-content: center;
 }
@@ -305,6 +309,7 @@
   justify-content: flex-end;
   font-weight: 700;
 }
+
 .checkins-table {
   display: flex;
   flex-direction: column;
@@ -313,7 +318,7 @@
 
 
 .progress-wrapper {
-  max-width: 820px; 
+  max-width: 820px;
 }
 
 .mood-wrapper {
@@ -377,7 +382,61 @@
   cursor: pointer;
 }
 
+.mood-slider {
+  transition: height 0.2s ease, filter 0.2s ease;
+}
+
+.mood-slider:hover:not(:disabled) {
+  height: 10px;
+  filter: brightness(1.05);
+}
+
+.mood-slider::-webkit-slider-thumb {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mood-slider:hover:not(:disabled)::-webkit-slider-thumb {
+  transform: scale(1.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.mood-slider:disabled:hover {
+  filter: none;
+}
+
 .mood-button {
   min-width: 200px;
   text-align: center;
+}
+
+.mood-slider:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.mood-button {
+  min-width: 200px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  &.cursor-default:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+#progressLink {
+  transform: translateY(4px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  &.opacity-100 {
+    transform: translateY(0);
+  }
 }
