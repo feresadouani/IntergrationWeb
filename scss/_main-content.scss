@@ -36,18 +36,18 @@
 
 .start-button {
     min-width: $button-min-width;
-    height: auto;
+    height: 42px;
     background: $gradient-button;
     border: none;
     border-radius: $border-radius-lg;
     color: $white;
     font-family: $font-title;
-    font-size: $paragraph-size;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba($primary-teal, 0.3);
-    padding: $spacing-xs $spacing-md;
+    padding: 0 $spacing-md;
     display: inline-flex;
     align-items: center;
     justify-content: center;

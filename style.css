@@ -264,18 +264,18 @@ p, .paragraph {
 
 .start-button {
   min-width: 48px;
-  height: auto;
+  height: 42px;
   background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
   border: none;
   border-radius: 16px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(73, 235, 224, 0.3);
-  padding: 0.5rem 1.5rem;
+  padding: 0 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
