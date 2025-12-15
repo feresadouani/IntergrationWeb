@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mindup - Chat</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled CSS from SCSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Script to load shared header/footer -->
+    <script src="components.js" defer></script>
+</head>
+
+<body class="bg-[#f3fafb]">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content chat-page">
+        <div class="chat-shell">
+            <!-- Sidebar -->
+            <aside class="chat-sidebar">
+                <div class="chat-sidebar-header">
+                    <span class="material-icons text-[#1a4d5c]">history</span>
+                    <span>Historique des Chats</span>
+                </div>
+                <div class="chat-list">
+                    <div class="chat-list-label">Chats :</div>
+                    <button class="chat-item active">Problème d'étude</button>
+                    <button class="chat-item">gérer le stress</button>
+                </div>
+            </aside>
+
+            <!-- Conversation -->
+            <section class="chat-panel">
+                <div class="chat-messages">
+                    <div class="message-row user">
+                        <div class="avatar user">
+                            <span class="material-icons">person</span>
+                        </div>
+                        <div class="bubble user">Chats :</div>
+                    </div>
+
+                    <div class="message-row bot">
+                        <div class="bubble bot">Chats :</div>
+                        <div class="avatar bot">
+                            <span class="material-icons">smart_toy</span>
+                        </div>
+                    </div>
+
+                    <div class="message-row user">
+                        <div class="avatar user">
+                            <span class="material-icons">person</span>
+                        </div>
+                        <div class="bubble user">Chats :</div>
+                    </div>
+
+                    <div class="message-row bot">
+                        <div class="bubble bot">Chats :</div>
+                        <div class="avatar bot">
+                            <span class="material-icons">smart_toy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" class="chat-textbox" placeholder="Type a message..." aria-label="Zone de message">
+                    <button class="chat-send" aria-label="Envoyer">
+                        <span class="material-icons">send</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
+
