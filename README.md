@@ -7,7 +7,7 @@ MindUp est une application web moderne et responsive conçue pour aider les util
 - **Feres Adouani**
 - **Hsouna Sellami**
 - **Sana Laridhi**
-- **Mouhamed Aziz Hammami**
+- **Mohamed Aziz Hammami**
 - **Abderrahmen Nasri**
 - **Saladin Khalfaoui**
 
