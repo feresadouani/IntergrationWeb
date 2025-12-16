@@ -9,13 +9,19 @@ body:has(.kanban-board) {
   min-height: 100vh;
 }
 
-// Header and footer styling for kanban page
-body:has(.kanban-board) .header {
+// Header and footer placeholders
+#header-placeholder,
+#footer-placeholder {
+  width: 100%;
   flex-shrink: 0;
 }
 
-body:has(.kanban-board) .footer {
-  flex-shrink: 0;
+#header-placeholder {
+  order: -1;
+}
+
+#footer-placeholder {
+  order: 999;
 }
 
 .main-content.kanban-board {

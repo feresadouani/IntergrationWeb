@@ -13,6 +13,7 @@ function loadHTML(elementId, filePath) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200 || xhr.status === 0) {
                 element.innerHTML = xhr.responseText;
+                updateImagePaths(element);
             } else {
                 tryFetch(elementId, filePath);
             }
