@@ -2031,10 +2031,37 @@ p, .paragraph {
 }
 
 /* ===== KANBAN ===== */
+body:has(.kanban-board) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body:has(.kanban-board) .header {
+  flex-shrink: 0;
+}
+
+body:has(.kanban-board) .footer {
+  flex-shrink: 0;
+}
+
+.main-content.kanban-board {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-height: 0;
+}
+
 .kanban-board {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 0 auto;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 }
 
 .kanban-header {
@@ -2049,33 +2076,30 @@ p, .paragraph {
 .kanban-title {
   font-size: 33px;
   font-weight: 700;
-  color: #0f172a;
+  color: #1a4d5c;
   font-family: "Poppins", sans-serif;
   margin: 0;
-}
-
-.button.primary {
-  background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
-  color: #ffffff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(73, 235, 224, 0.3);
-}
-.button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(73, 235, 224, 0.4);
 }
 
 .kanban-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+}
+@media (max-width: 768px) {
+  .kanban-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.kanban-column {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .kanban-column-title {
@@ -2084,7 +2108,7 @@ p, .paragraph {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   font-size: 26px;
-  color: #0f172a;
+  color: #1a4d5c;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid rgba(73, 235, 224, 0.3);
@@ -2097,6 +2121,7 @@ p, .paragraph {
   align-items: center;
   gap: 1.5rem;
   padding: 1rem;
+  flex: 1;
 }
 
 .kanban-card {
@@ -2107,9 +2132,10 @@ p, .paragraph {
   border-radius: 12px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
-  color: #0f172a;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  color: #1a4d5c;
+  box-shadow: 0 4px 12px rgba(26, 77, 92, 0.15);
   cursor: grab;
+  user-select: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   align-items: center;
@@ -2118,10 +2144,15 @@ p, .paragraph {
 }
 .kanban-card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 8px 20px rgba(26, 77, 92, 0.25);
 }
 .kanban-card:active {
   cursor: grabbing;
+}
+.kanban-card.dragging {
+  cursor: grabbing;
+  opacity: 0.5;
+  background-color: #ddd;
 }
 
 .card-yellow {
@@ -2144,43 +2175,6 @@ p, .paragraph {
   transform: rotate(4deg);
 }
 
-.kanban-card {
-  cursor: grab;
-  user-select: none;
-  transition: transform 0.2s ease;
-}
-.kanban-card.dragging {
-  cursor: grabbing;
-  opacity: 0.5;
-  background-color: #ddd;
-}
-
-/* Optional: column & board styling */
-.kanban-board {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.kanban-columns {
-  display: flex;
-  gap: 15px;
-  justify-content: space-between;
-}
-
-.kanban-column {
-  flex: 1;
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.kanban-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 /* ===== Add Task Button ===== */
 #add-task-btn.button.primary {
   display: inline-flex;
@@ -2191,10 +2185,10 @@ p, .paragraph {
   font-weight: 700;
   border-radius: 12px;
   border: none;
-  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
-  color: #fff;
+  background: linear-gradient(135deg, #49EBE0 0%, #49C2EB 50%, #49EBA9 100%);
+  color: #ffffff;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 25px rgba(73, 235, 224, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -2203,11 +2197,11 @@ p, .paragraph {
 }
 #add-task-btn.button.primary:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(73, 235, 224, 0.4);
 }
 #add-task-btn.button.primary:active {
   transform: translateY(1px) scale(0.98);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(73, 235, 224, 0.25);
 }
 #add-task-btn.button.primary::before {
   content: "";
