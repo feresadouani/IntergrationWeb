@@ -1,11 +1,40 @@
-@use '../variables' as *;
+@use '../abstracts/variables' as *;
 
 /* ===== KANBAN ===== */
 
+// Ensure proper spacing with header and footer
+body:has(.kanban-board) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Header and footer styling for kanban page
+body:has(.kanban-board) .header {
+  flex-shrink: 0;
+}
+
+body:has(.kanban-board) .footer {
+  flex-shrink: 0;
+}
+
+.main-content.kanban-board {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+  min-height: 0; // Allow flex shrinking
+}
+
 .kanban-board {
   max-width: 1200px;
-  margin: $spacing-xl auto;
+  margin: 0 auto;
   padding: 0 $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  width: 100%;
 }
 
 .kanban-header {
@@ -25,29 +54,24 @@
   margin: 0;
 }
 
-.button.primary {
-  background: $gradient-button;
-  color: $white;
-  border: none;
-  padding: $spacing-sm $spacing-lg;
-  border-radius: $border-radius-md;
-  font-family: $font-body;
-  font-weight: 600;
-  font-size: $paragraph-size;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba($primary-teal, 0.3);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba($primary-teal, 0.4);
-  }
-}
-
 .kanban-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-xl;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.kanban-column {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  display: flex;
+  flex-direction: column;
 }
 
 .kanban-column-title {
@@ -69,6 +93,7 @@
   align-items: center;
   gap: $spacing-md;
   padding: $spacing-sm;
+  flex: 1;
 }
 
 .kanban-card {
@@ -82,6 +107,7 @@
   color: $text-dark;
   box-shadow: 0 4px 12px rgba($text-dark, 0.15);
   cursor: grab;
+  user-select: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   align-items: center;
@@ -96,52 +122,32 @@
   &:active {
     cursor: grabbing;
   }
-}
-
-.card-yellow { background: #fde68a; transform: rotate(-5deg); }
-.card-green  { background: #86efac; transform: rotate(3deg); }
-.card-blue   { background: #7dd3fc; transform: rotate(-3deg); }
-.card-orange { background: #fdba74; transform: rotate(4deg); }
-
-
-// assets/scss/pages/_kanban.scss
-
-.kanban-card {
-  cursor: grab;           // default cursor
-  user-select: none;      // prevents text selection while dragging
-  transition: transform 0.2s ease;
 
   &.dragging {
-    cursor: grabbing;     // while dragging
+    cursor: grabbing;
     opacity: 0.5;
     background-color: #ddd;
   }
 }
 
-/* Optional: column & board styling */
-.kanban-board {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.card-yellow { 
+  background: #fde68a; 
+  transform: rotate(-5deg); 
 }
 
-.kanban-columns {
-  display: flex;
-  gap: 15px;
-  justify-content: space-between;
+.card-green { 
+  background: #86efac; 
+  transform: rotate(3deg); 
 }
 
-.kanban-column {
-  flex: 1;
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
+.card-blue { 
+  background: #7dd3fc; 
+  transform: rotate(-3deg); 
 }
 
-.kanban-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.card-orange { 
+  background: #fdba74; 
+  transform: rotate(4deg); 
 }
 
 /* ===== Add Task Button ===== */
@@ -149,15 +155,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem 2.5rem;       // large padding
-  font-size: 1.8rem;            // bigger font
+  padding: 1.2rem 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  border-radius: 12px;          // safe hardcoded value
+  border-radius: $border-radius-md;
   border: none;
-  background: linear-gradient(135deg, #6a82fb, #fc5c7d); // safe gradient
-  color: #fff;
+  background: $gradient-button;
+  color: $white;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 25px rgba($primary-teal, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -166,12 +172,12 @@
 
   &:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px rgba($primary-teal, 0.4);
   }
 
   &:active {
     transform: translateY(1px) scale(0.98);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba($primary-teal, 0.25);
   }
 
   &::before {
@@ -181,7 +187,7 @@
     height: 100%;
     top: 0;
     left: -100%;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     transform: skewX(-20deg);
     transition: all 0.5s;
   }
@@ -191,7 +197,7 @@
   }
 
   .material-icons {
-    margin-right: 1rem;   // spacing between icon and text
-    font-size: 2rem;      // icon size
+    margin-right: 1rem;
+    font-size: 2rem;
   }
 }
